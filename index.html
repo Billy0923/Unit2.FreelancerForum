@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Freelancer Forum</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div class="big">
+        <h2>Freelancer Forum</h2>
+        <h3>The Average starting price is $
+            <script>
+                document.write(AveragePrice(freelancers))
+                //The DOM is updated to reflect the average starting price.
+            </script>
+        </h3>
+        <h2>Available Freelancers</h2>
+        <DIV class="lancerList">
+            <div class="lancer">
+                <h2>Name</h2>
+                <ul>
+                    <li>A</li>
+                    <li>B</li>
+                    <li>C</li>
+                </ul>
+            </div>
+            <div class="lancer">
+                <h2>Occupation</h2>
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                </ul>
+            </div>
+            <div class="lancer">
+                <h2>Starting Price</h2>
+                <ul>
+                    <li>x</li>
+                    <li>y</li>
+                    <li>Z</li>
+                </ul>
+            </div>
+        </DIV>
+    </div>
+    <ul id="Freelancers"></ul>
+
+    <script>
+        renderInitialFreelancerData();
+    </script>
+    <!-- the querySelector function and only find it after it has been created -->
+    <!-- which is why I call the function after the ul has been created -->
+  </body>
+</html>
