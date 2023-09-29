@@ -11,13 +11,18 @@
     <div class="big">
         <h2>Freelancer Forum</h2>
         <h3>The Average starting price is $
+            <span id="AveragePrice">
+
+            </span>
             <script>
-                document.write(AveragePrice(freelancers))
+                // function calculateAverage(){
+                //     document.write(AveragePrice(freelancers))}
                 //The DOM is updated to reflect the average starting price.
+                //setInterval(calculateAverage,1000)
             </script>
         </h3>
         <h2>Available Freelancers</h2>
-        <DIV class="lancerList">
+        <div class="lancerList">
             <div class="lancer">
                 <h2>Name</h2>
                 <ul id="Name">
@@ -48,7 +53,7 @@
 
     <script>
         renderInitialFreelancerData();
-        const addFreelancerInterval= setInterval(NewRandomFreelancer(),1000)
+        const addFreelancerInterval= setInterval(NewRandomFreelancer,2000)
     </script>
     <!-- the querySelector function and only find it after it has been created -->
     <!-- which is why I call the function after the ul has been created -->

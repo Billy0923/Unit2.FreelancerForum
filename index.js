@@ -80,7 +80,17 @@ function NewRandomFreelancer(){
     current2.append(element2);
 
     freelancers.push({name: newLancer.name, price: newLancer.price, occupation: newLancer.occupation})
+    if(freelancers.length>=35){
+        clearInterval(addFreelancerInterval)
+    }
+
+    updateAverage()
 }
+
+function updateAverage(){
+    document.getElementById("AveragePrice").textContent=AveragePrice(freelancers)
+}
+
 //A function is written that correctly calculates the average starting price of the freelancers array.
 function AveragePrice(arr){
     const newArr=[]
@@ -89,7 +99,7 @@ function AveragePrice(arr){
     })
     let sum = newArr.reduce((a,b)=>a+b)
     //newArr is an array contains only number of prices
-    return sum/newArr.length;
+    return (sum/newArr.length).toFixed(2);
 }
 
 // testing to see if AveragePrice work properly
