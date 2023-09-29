@@ -20,26 +20,26 @@
         <DIV class="lancerList">
             <div class="lancer">
                 <h2>Name</h2>
-                <ul>
-                    <li>A</li>
+                <ul id="Name">
+                    <!-- <li>A</li>
                     <li>B</li>
-                    <li>C</li>
+                    <li>C</li> -->
                 </ul>
             </div>
             <div class="lancer">
                 <h2>Occupation</h2>
-                <ul>
-                    <li>1</li>
+                <ul id="occupation">
+                    <!-- <li>1</li>
                     <li>2</li>
-                    <li>3</li>
+                    <li>3</li> -->
                 </ul>
             </div>
             <div class="lancer">
                 <h2>Starting Price</h2>
-                <ul>
-                    <li>x</li>
+                <ul id="price">
+                    <!-- <li>x</li>
                     <li>y</li>
-                    <li>Z</li>
+                    <li>Z</li> -->
                 </ul>
             </div>
         </DIV>
@@ -48,6 +48,7 @@
 
     <script>
         renderInitialFreelancerData();
+        const addFreelancerInterval= setInterval(NewRandomFreelancer(),1000)
     </script>
     <!-- the querySelector function and only find it after it has been created -->
     <!-- which is why I call the function after the ul has been created -->

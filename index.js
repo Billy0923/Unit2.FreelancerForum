@@ -10,6 +10,16 @@ const freelancers = [
     { name: "Dr. Wire", price: 47, occupation: "teacher" },
     { name: "Prof. Goose", price: 72, occupation: "driver" },
 ];
+class people{
+    constructor(name,price,occupation){
+        this.name=name;
+        this.price =price;
+        this.occupation=occupation;
+    }
+    helper(){
+        //do nothing
+    }
+}
 //The program initializes an array of possible names and an array of possible occupations.
 //
 const Occupations =["Electrician","RN","Laborer","Truck Driver","Firefighter","Management","Engineer","teacher","programmer","gardener"];
@@ -20,14 +30,31 @@ const freelancerName=["James","Noah","Elizabeth","John","Benjamin","Michael","Em
 //render initial freelancers array data to webpage
 function renderInitialFreelancerData(){
     //document.querySelector is correctly used to select existing DOM elements.
-    const current = document.querySelector("#Freelancers");
+    
     const squareElements = freelancers.map((lancers) => {
-      const element = document.createElement("li");
-      element.textContent=JSON.stringify(lancers)
-      element.classList.add(lancers.price);
-      return element;
+
+        const current = document.querySelector("#Name");
+        const element=document.createElement("li");
+        element.textContent=lancers.name;
+        current.append(element);
+
+        const current1 = document.querySelector("#occupation");
+        const element1=document.createElement("li");
+        element1.textContent=lancers.occupation;
+        current1.append(element1);
+
+        const current2 = document.querySelector("#price");
+        const element2=document.createElement("li");
+        element2.textContent=lancers.price;
+        current2.append(element2);
+        
+      //return element;
+
     });
-    current.replaceChildren(...squareElements);
+    //current.replaceChildren(...squareElements);
+    
+    //newLancer=NewRandomFreelancer();
+
 }
 
 
@@ -35,7 +62,24 @@ function renderInitialFreelancerData(){
 //A function is written that generates a freelancer with a random name, occupation, 
 //and starting price. This object is pushed into the freelancers array.
 function NewRandomFreelancer(){
-    
+    const newLancer=new people(freelancerName[Math.floor(Math.random()*freelancerName.length)],Math.floor(Math.random()*100),Occupations[Math.floor(Math.random()*Occupations.length)]);
+
+    const current = document.querySelector("#Name");
+    const element=document.createElement("li");
+    element.textContent=newLancer.name;
+    current.append(element);
+
+    const current1 = document.querySelector("#occupation");
+    const element1=document.createElement("li");
+    element1.textContent=newLancer.occupation;
+    current1.append(element1);
+
+    const current2 = document.querySelector("#price");
+    const element2=document.createElement("li");
+    element2.textContent=newLancer.price;
+    current2.append(element2);
+
+    freelancers.push({name: newLancer.name, price: newLancer.price, occupation: newLancer.occupation})
 }
 //A function is written that correctly calculates the average starting price of the freelancers array.
 function AveragePrice(arr){
@@ -51,4 +95,3 @@ function AveragePrice(arr){
 // testing to see if AveragePrice work properly
 //console.log(AveragePrice(freelancers));
 
-//const addFreelancerInterval= setInterval(theFunction,5000)
